@@ -3,1034 +3,492 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thobo Atlang Mosanako - Full-Stack Developer, FinTech Entrepreneur, and Trading Systems Architect. Founder of BSTM.">
-  <title>Thobo Atlang Mosanako | Full-Stack Developer & FinTech Architect</title>
+  <meta name="description" content="Thobo Atlang Mosanako — Full-Stack Developer building trading bots, web apps, and dashboards for businesses in Botswana.">
+  <title>Thobo Mosanako | Developer & FinTech Builder</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --primary: #4CAF50;
-      --primary-dark: #45a049;
-      --bg-dark: #0a0a0a;
-      --bg-card: rgba(68, 68, 68, 0.4);
-      --text-light: #e0e0e0;
-      --text-muted: #b0b0b0;
-      --border-glow: rgba(76, 175, 80, 0.3);
-    }
-
-    body {
-      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f1e 100%);
-      color: var(--text-light);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* Animated background particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.3;
-    }
-
-    .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 50%;
-      animation: float 20s infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translate(100vw, -100vh); opacity: 0; }
-    }
-
-    header {
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(20px);
-      padding: 1.2rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      border-bottom: 2px solid var(--primary);
-    }
-
-    nav {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 0.5rem 1.2rem;
-      border-radius: 6px;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transform: translateX(-50%);
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover::after {
-      width: 80%;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-      background: rgba(76, 175, 80, 0.1);
-      transform: translateY(-2px);
-    }
-
-    main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    section {
-      margin-bottom: 5rem;
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      transform: translateY(30px);
-    }
-
-    #hero {
-      text-align: center;
-      padding: 8rem 2rem;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(26, 26, 46, 0.4) 100%);
-      border-radius: 30px;
-      margin-bottom: 6rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    #hero > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    #hero h1 {
-      font-size: 4rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #4CAF50 0%, #81C784 50%, #4CAF50 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: textGlow 3s ease-in-out infinite;
-      letter-spacing: -1px;
-    }
-
-    @keyframes textGlow {
-      0%, 100% { filter: drop-shadow(0 0 20px rgba(76, 175, 80, 0.6)); }
-      50% { filter: drop-shadow(0 0 40px rgba(76, 175, 80, 0.9)); }
-    }
-
-    .subtitle {
-      font-size: 1.4rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-weight: 300;
-    }
-
-    .tagline {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin: 1.5rem 0 2.5rem;
-      font-style: italic;
-    }
-
-    .location {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-
-    h2 {
-      color: var(--primary);
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-      text-align: center;
-      position: relative;
-      padding-bottom: 1.5rem;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      border-radius: 2px;
-    }
-
-    .intro-text {
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-    }
-
-    .intro-text .highlight {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      background: linear-gradient(135deg, rgba(68, 68, 68, 0.3), rgba(51, 51, 51, 0.5));
-      border-radius: 20px;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(76, 175, 80, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-
-    .stat:hover::before {
-      opacity: 1;
-    }
-
-    .stat:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 20px 50px var(--border-glow);
-      border-color: var(--primary);
-    }
-
-    .stat h3 {
-      font-size: 3.5rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-weight: 800;
-    }
-
-    .stat p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .card {
-      background: linear-gradient(135deg, rgba(68, 68, 68, 0.4) 0%, rgba(51, 51, 51, 0.6) 100%);
-      padding: 2.5rem;
-      border-radius: 20px;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(76, 175, 80, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.15), transparent);
-      transition: left 0.6s;
-    }
-
-    .card:hover::before {
-      left: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 20px 60px var(--border-glow);
-      border-color: var(--primary);
-    }
-
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 1.2rem;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .card p {
-      color: #c8c8c8;
-      margin-bottom: 1.2rem;
-      line-height: 1.7;
-    }
-
-    .card .tech-stack {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-top: 1rem;
-    }
-
-    .skills-section {
-      background: rgba(26, 26, 46, 0.4);
-      padding: 3rem;
-      border-radius: 20px;
-      margin-top: 3rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-
-    .skill-category h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .skill-category ul {
-      list-style: none;
-    }
-
-    .skill-category li {
-      padding: 0.6rem 0;
-      color: var(--text-muted);
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .skill-category li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-
-    button, .btn {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white;
-      border: none;
-      padding: 1.1rem 2.8rem;
-      font-size: 1.05rem;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-    }
-
-    button::before, .btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-
-    button:hover::before, .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    button:hover, .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(76, 175, 80, 0.6);
-    }
-
-    button:active, .btn:active {
-      transform: translateY(-2px);
-    }
-
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .contact-item {
-      background: var(--bg-card);
-      padding: 1.8rem;
-      border-radius: 15px;
-      border: 1px solid rgba(76, 175, 80, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .contact-item:hover {
-      border-color: var(--primary);
-      transform: translateY(-5px);
-    }
-
-    .contact-item h4 {
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-    }
-
-    .contact-item a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-item a:hover {
-      color: var(--primary);
-    }
-
-    form {
-      max-width: 700px;
-      margin: 3rem auto;
-      background: rgba(68, 68, 68, 0.3);
-      padding: 3rem;
-      border-radius: 20px;
-      border: 1px solid rgba(76, 175, 80, 0.2);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 1.2rem;
-      margin-bottom: 1.8rem;
-      background: rgba(26, 26, 46, 0.6);
-      border: 1px solid rgba(76, 175, 80, 0.3);
-      border-radius: 10px;
-      color: var(--text-light);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
-      background: rgba(26, 26, 46, 0.8);
-    }
-
-    textarea {
-      min-height: 180px;
-      resize: vertical;
-    }
-
-    footer {
-      background: rgba(10, 10, 10, 0.95);
-      padding: 3rem 2rem;
-      text-align: center;
-      border-top: 2px solid var(--primary);
-      margin-top: 6rem;
-    }
-
-    footer p {
-      margin-bottom: 1.5rem;
-      color: var(--text-muted);
-    }
-
-    footer ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      color: var(--primary);
-      background: rgba(76, 175, 80, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .cta-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(26, 26, 46, 0.3));
-      border-radius: 20px;
-      margin: 4rem 0;
-    }
-
-    .cta-section h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-section p {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-
-    @media (max-width: 768px) {
-      #hero h1 { font-size: 2.8rem; }
-      h2 { font-size: 2.2rem; }
-      nav ul { gap: 1rem; }
-      .grid { grid-template-columns: 1fr; }
-      main { padding: 1.5rem; }
-      #hero { padding: 5rem 1.5rem; }
-    }
-
-    /* Scroll reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --g:#22c55e;--bg:#0f0f0f;--s:#161616;--s2:#1c1c1c;
+      --b:#2a2a2a;--t:#f0f0f0;--m:#888;--max:880px
+    }
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);font-size:16px;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    nav{position:sticky;top:0;background:rgba(15,15,15,.97);border-bottom:1px solid var(--b);z-index:100}
+    .ni{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:56px}
+    .logo{font-weight:800;font-size:1.05rem;letter-spacing:-.5px}.logo span{color:var(--g)}
+    nav ul{list-style:none;display:flex;gap:1.8rem}
+    nav a{color:var(--m);font-size:.85rem;transition:color .2s}
+    nav a:hover{color:var(--t)}
+
+    /* WRAP / SECTIONS */
+    .w{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+    .sec{padding:4.5rem 0;border-top:1px solid var(--b)}
+    .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--g);font-weight:600;margin-bottom:.6rem}
+    h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:.7rem;letter-spacing:-.5px}
+    .sub{color:var(--m);font-size:.93rem;margin-bottom:2rem;max-width:500px;line-height:1.7}
+
+    /* BUTTONS */
+    .btn{display:inline-block;padding:.7rem 1.6rem;border-radius:6px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s,transform .15s}
+    .btn:hover{opacity:.85;transform:translateY(-1px)}
+    .bp{background:var(--g);color:#000}
+    .bg{background:transparent;color:var(--t);border:1px solid var(--b)}
+
+    /* HERO */
+    #hero{padding:5.5rem 0 4.5rem}
+    .avail{display:inline-flex;align-items:center;gap:.45rem;background:rgba(34,197,94,.08);color:var(--g);border:1px solid rgba(34,197,94,.2);padding:.28rem .85rem;border-radius:100px;font-size:.78rem;margin-bottom:1.8rem}
+    .avail::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0}
+    #hero h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;line-height:1.15;letter-spacing:-1px;margin-bottom:1rem}
+    #hero h1 span{color:var(--g)}
+    #hero .hs{font-size:1rem;color:var(--m);margin-bottom:2rem;max-width:420px}
+    .brow{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+
+    /* TRUST STRIP */
+    #trust{padding:1.6rem 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+    .tstrip{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center}
+    .ti{font-size:.82rem;color:var(--m);display:flex;align-items:center;gap:.45rem}
+    .ti strong{color:var(--t);font-size:1rem}
+    .ti .big{font-size:1.3rem;font-weight:800;color:var(--g)}
+
+    /* SIPA BADGE */
+    .sipa{display:inline-flex;align-items:center;gap:.6rem;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:.6rem 1.1rem;font-size:.82rem;color:var(--t);font-weight:600;margin-bottom:1.4rem}
+    .sipa span{color:var(--g)}
+
+    /* SERVICES */
+    .sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+    .sc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.5rem}
+    .sc:hover{border-color:#333}
+    .si{font-size:1.4rem;margin-bottom:.7rem}
+    .sc h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
+    .sc p{font-size:.83rem;color:var(--m);line-height:1.6}
+
+    /* PROJECTS */
+    .pl{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+    .pc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.6rem}
+    .pc:hover{border-color:#333}
+    .pt{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+    .pt h3{font-size:1rem;font-weight:700}
+    .pl-link{font-size:.8rem;color:var(--g);white-space:nowrap;font-weight:600}
+    .pl-link:hover{text-decoration:underline}
+    .metric{display:inline-block;font-size:.77rem;background:rgba(34,197,94,.08);color:var(--g);border:1px solid rgba(34,197,94,.18);padding:.18rem .65rem;border-radius:100px;margin-bottom:.75rem}
+    .pdesc{font-size:.87rem;color:var(--m);margin-bottom:.9rem;line-height:1.65}
+    .tags{display:flex;flex-wrap:wrap;gap:.35rem}
+    .tag{font-size:.72rem;background:var(--s2);border:1px solid var(--b);color:var(--m);padding:.15rem .55rem;border-radius:100px}
+
+    /* WHY ME */
+    .wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+    .wi{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.4rem}
+    .wi h4{font-size:.92rem;font-weight:700;margin-bottom:.35rem}
+    .wi p{font-size:.83rem;color:var(--m);line-height:1.6}
+
+    /* PRICING */
+    .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
+    .prc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.8rem;display:flex;flex-direction:column}
+    .prc.feat{border-color:var(--g)}
+    .ptag{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--m);margin-bottom:.4rem}
+    .prc h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+    .pnum{font-size:1.6rem;font-weight:800;color:var(--g);margin:.6rem 0 1rem}
+    .pnum span{font-size:.85rem;color:var(--m);font-weight:400}
+    .prc ul{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.4rem;flex:1}
+    .prc li{font-size:.84rem;color:var(--m);display:flex;gap:.45rem;align-items:flex-start}
+    .prc li::before{content:'✓';color:var(--g);font-weight:700;flex-shrink:0}
+    .pnote{text-align:center;color:var(--m);font-size:.82rem;margin-top:1.5rem}
+    .pnote a{color:var(--g)}
+
+    /* SKILLS */
+    .skg{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1rem;margin-top:2rem}
+    .skc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.3rem}
+    .skc h4{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--m);margin-bottom:.9rem}
+    .skc ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+    .skc li{font-size:.86rem;color:var(--t);display:flex;align-items:center;gap:.45rem}
+    .skc li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0}
+
+    /* TESTIMONIALS */
+    .tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
+    .tc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.6rem}
+    .tc p{font-size:.9rem;color:var(--t);line-height:1.7;margin-bottom:1rem}
+    .ta{font-size:.78rem;color:var(--g);font-weight:600}
+    .cg{display:grid;grid-template-columns:1fr 1.2fr;gap:3.5rem;margin-top:2rem}
+    .ci p{color:var(--m);font-size:.92rem;margin-bottom:1.8rem;line-height:1.75}
+    .crows{display:flex;flex-direction:column;gap:1rem}
+    .crow{display:flex;flex-direction:column;gap:.15rem}
+    .clbl{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--m)}
+    .crow a,.crow span{color:var(--t);font-size:.9rem}
+    .crow a:hover{color:var(--g)}
+    form{display:flex;flex-direction:column;gap:.8rem}
+    input,textarea,select{background:var(--s);border:1px solid var(--b);border-radius:6px;color:var(--t);font-family:inherit;font-size:.9rem;padding:.8rem .95rem;width:100%;transition:border-color .2s}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:#444}
+    textarea{min-height:115px;resize:vertical}
+    select option{background:var(--s)}
+    .fnote{font-size:.76rem;color:var(--m)}
+    #fs{font-size:.83rem;color:var(--g);min-height:1.1rem}
+
+    /* CTA STRIP */
+    #cta{padding:4rem 0;border-top:1px solid var(--b);text-align:center}
+    #cta h2{margin-bottom:.6rem}
+    #cta p{color:var(--m);font-size:.95rem;margin-bottom:1.8rem}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--b);padding:1.8rem 1.5rem}
+    .fi{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    footer p{font-size:.8rem;color:var(--m)}
+    footer ul{list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap}
+    footer a{color:var(--m);font-size:.8rem;transition:color .2s}
+    footer a:hover{color:var(--t)}
+
+    /* MOBILE */
+    @media(max-width:640px){
+      nav ul{display:none}
+      .cg{grid-template-columns:1fr;gap:2rem}
+      .fi{flex-direction:column;text-align:center}
+      .sg,.wg,.pg,.skg,.tg{grid-template-columns:1fr}
+      .pt{flex-direction:column;gap:.3rem}
+      .brow{flex-direction:column;align-items:flex-start}
+      .tstrip{flex-direction:column;gap:1rem}
+      h2{font-size:1.5rem}
+      #hero h1{font-size:2rem}
     }
   </style>
 </head>
 <body>
-  <div class="particles"></div>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="hero">
-      <h1>Thobo Atlang Mosanako</h1>
-      <p class="subtitle">Digital Creator | Full-Stack Developer | FinTech Entrepreneur | Trading Systems Architect</p>
-      <p class="tagline">"Building disciplined systems for the future of finance"</p>
-      <p class="location">📍 Gaborone, Botswana</p>
-      <div style="margin-top: 2.5rem;">
-        <button onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">Explore My Work</button>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p class="intro-text">
-        I'm a <span class="highlight">self-taught, results-oriented full-stack developer</span> and digital entrepreneur with hands-on experience building automated trading systems, web applications, and Telegram-based tools in the FinTech space. As <span class="highlight">Founder and Systems Architect of BSTM</span>, I've created an institutional-grade framework designed to enforce trading discipline, protect human agency, and enable long-term operational resilience in volatile environments.
-      </p>
-      <p class="intro-text">
-        I've proven my ability to ship <span class="highlight">production-ready systems</span> using modern tools (React, Python, Supabase, Vercel, Telegram API) while maintaining rigorous protocols for decision-making, risk management, and verifiable execution. My work demonstrates success in growing live user bases across multiple countries while maintaining exceptional system reliability.
-      </p>
-      
-      <div class="stats reveal">
-        <div class="stat">
-          <h3>5+</h3>
-          <p>Years Experience</p>
-        </div>
-        <div class="stat">
-          <h3>50+</h3>
-          <p>Active Users</p>
-        </div>
-        <div class="stat">
-          <h3>99.7%</h3>
-          <p>System Uptime</p>
-        </div>
-        <div class="stat">
-          <h3>87%</h3>
-          <p>Win Rate (BSTM-X)</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Key Projects</h2>
-      <p class="intro-text">As Founder & Lead Developer of BSTM, I've built a comprehensive ecosystem of interconnected trading tools</p>
-      
-      <div class="grid reveal">
-        <div class="card">
-          <h3>🤖 BSTM Trading Discipline Bot</h3>
-          <p>An ICT Silver Bullet trading bot that delivers live New York/London session alerts, enforces a 15-rule compliance checklist, enables trade logging, and provides performance analytics.</p>
-          <p><strong>Impact:</strong> Currently serving 50+ active users across 3 countries with 99.7% uptime.</p>
-          <p class="tech-stack">Tech: Python, Telegram Bot API, Supabase</p>
-          <button onclick="window.open('https://t.me/Todd366Bot', '_blank')">View Bot →</button>
-        </div>
-        
-        <div class="card">
-          <h3>📊 BSTM-X Trading Platform</h3>
-          <p>A live beta web dashboard for portfolio tracking, win-rate analytics, level progression, and AI-driven insights (VENUS AI). Features real-time performance benchmarking and risk management tools for disciplined trading execution.</p>
-          <p><strong>Results:</strong> 87% win rate demonstrated across 156 tracked trades.</p>
-          <p class="tech-stack">Tech: React, Vercel, Supabase</p>
-          <button onclick="window.open('https://bstm-x.vercel.app', '_blank')">Launch Platform →</button>
-        </div>
-        
-        <div class="card">
-          <h3>🗺️ BSTM System Map & Operating Doctrine</h3>
-          <p>Comprehensive public documentation detailing BSTM's institutional architecture, including 9 verification interfaces, decision/kill/capital protocols, 30-department matrix, proof-of-work logs, and containment boundaries.</p>
-          <p><strong>Purpose:</strong> Serves as the transparent governance foundation for the entire ecosystem.</p>
-          <p class="tech-stack">Tech: HTML, CSS, GitHub Pages</p>
-          <button onclick="window.open('https://todd366.github.io/bstm-system-map', '_blank')">View Documentation →</button>
-        </div>
-
-        <div class="card">
-          <h3>📡 BSTM Live Updates Channel</h3>
-          <p>Official read-only broadcast channel for trading signals, protocol announcements, and system updates. Part of Layer 3 (Attention & Signal) in the BSTM pyramid structure.</p>
-          <p><strong>Role:</strong> Primary communication hub for the BSTM community.</p>
-          <p class="tech-stack">Platform: Telegram</p>
-          <button onclick="window.open('https://t.me/bstm_signals', '_blank')">Join Channel →</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Core Skills & Expertise</h2>
-      
-      <div class="skills-section reveal">
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>💻 Design & Development</h3>
-            <ul>
-              <li>Frontend: HTML, CSS, JavaScript, React</li>
-              <li>Backend & Automation: Python, Telegram Bot API</li>
-              <li>Database: Supabase (PostgreSQL)</li>
-              <li>Deployment: Vercel, GitHub Pages</li>
-              <li>Tools: Figma (UI/UX), GitHub, Notion</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>📱 Content & Digital Presence</h3>
-            <ul>
-              <li>Content Creation: Videos, graphics, promotional materials</li>
-              <li>Social Media Management & Growth</li>
-              <li>Community Engagement & Building</li>
-              <li>Strategy Development for niche communities</li>
-              <li>Brand Development & Marketing</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>🏗️ Technical & Domain Expertise</h3>
-            <ul>
-              <li>FinTech / Trading Systems Architecture</li>
-              <li>Automated alerts & rule-based checklists</li>
-              <li>Performance tracking & analytics</li>
-              <li>Risk management dashboards</li>
-              <li>Protocol design & modular infrastructure</li>
-              <li>System auditability & containment doctrines</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>🌍 Languages & Communication</h3>
-            <ul>
-              <li>English (Fluent)</li>
-              <li>Setswana (Fluent)</li>
-              <li>Technical Documentation</li>
-              <li>User Education & Training</li>
-              <li>Cross-cultural Communication</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="achievements">
-      <h2>Key Achievements</h2>
-      
-      <div class="grid reveal">
-        <div class="card">
-          <h3>🚀 Product Launch & Scaling</h3>
-          <p>Successfully launched and scaled a live trading discipline bot from concept to 50+ active users with documented execution logs and verifiable uptime.</p>
-        </div>
-        
-        <div class="card">
-          <h3>📜 Institutional Protocol Design</h3>
-          <p>Designed and published institutional-grade protocols (Decision, Kill, Capital Acceptance) that enforce disciplined, transparent operations — a rare feature in personal/early-stage projects.</p>
-        </div>
-        
-        <div class="card">
-          <h3>📱 Phone-First Architecture</h3>
-          <p>Built and maintained a modular, phone-first tech stack capable of offline operation and zero vendor lock-in, ensuring long-term resilience.</p>
-        </div>
-
-        <div class="card">
-          <h3>✅ Verifiable Proof-of-Work</h3>
-          <p>Established verifiable proof-of-work through public GitHub repositories, execution logs, and live system status dashboards.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="cta-section reveal">
-      <h2>Career Objective</h2>
-      <p>Seeking challenging roles in software development, FinTech, full-stack engineering, or digital product building where I can apply my expertise in building automated systems, web applications, and bot integrations to drive measurable impact.</p>
-      <p>Eager to contribute to innovative teams while continuing to develop production-grade solutions that prioritize reliability, user discipline, and long-term value creation.</p>
-      <a href="#contact" class="btn">Let's Work Together</a>
-    </div>
-
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      
-      <div class="contact-info reveal">
-        <div class="contact-item">
-          <h4>📧 Primary Email</h4>
-          <a href="mailto:gurutodd366@gmail.com">gurutodd366@gmail.com</a>
-        </div>
-        
-        <div class="contact-item">
-          <h4>📧 BSTM Email</h4>
-          <a href="mailto:bstm366@gmail.com">bstm366@gmail.com</a>
-        </div>
-        
-        <div class="contact-item">
-          <h4>📱 Primary Phone</h4>
-          <a href="tel:+26774393675">+267 74393675</a>
-        </div>
-        
-        <div class="contact-item">
-          <h4>📱 BSTM Phone</h4>
-          <a href="tel:+26778355551">+267 78355551</a>
-        </div>
-      </div>
-
-      <form onsubmit="event.preventDefault(); alert('Thank you for your message! I will get back to you soon.');" class="reveal">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject">
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-
-      <div style="text-align: center; margin-top: 3rem;">
-        <p style="color: var(--text-muted); margin-bottom: 1rem;">Portfolio: All projects publicly accessible via links above</p>
-        <p style="color: var(--text-muted);">Social Channels: Available on request (Telegram preferred for professional contact)</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Thobo Atlang Mosanako - All Rights Reserved</p>
-    <p style="font-size: 0.9rem;">Digital Creator | Full-Stack Developer | FinTech Entrepreneur | Trading Systems Architect</p>
+<nav>
+  <div class="ni">
+    <a class="logo" href="#hero">TAM<span>.</span></a>
     <ul>
-      <li><a href="https://github.com/todd366" target="_blank">Personal GitHub</a></li>
-      <li><a href="https://github.com/bstm-systems" target="_blank">BSTM GitHub</a></li>
-      <li><a href="https://t.me/bstm_signals" target="_blank">Telegram Channel</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="w">
+<section id="hero">
+  <div class="avail">Available for projects · Gaborone, Botswana</div>
+  <h1>I build <span>trading bots,</span><br>web apps & dashboards<br>for businesses.</h1>
+  <div class="sipa">🛡️ <span>CIPA Registered</span> Business · Botswana</div>
+  <p class="hs">6 live projects. 50+ users. Built in Botswana.</p>
+  <div class="brow">
+    <a href="#contact" class="btn bp">Hire Me</a>
+    <a href="#projects" class="btn bg">See My Work</a>
+  </div>
+</section>
+</div>
+
+<!-- TRUST STRIP -->
+<div id="trust">
+  <div class="w">
+    <div class="tstrip">
+      <div class="ti">🟢 <span class="big">50+</span>&nbsp;<strong>active users</strong>&nbsp;across 3 countries</div>
+      <div class="ti">📈 <span class="big">99.7%</span>&nbsp;<strong>uptime</strong>&nbsp;on live systems</div>
+      <div class="ti">🔗 <span class="big">6</span>&nbsp;<strong>live projects</strong>&nbsp;— publicly verifiable</div>
+      <div class="ti">⚡ <strong>Replies within 24 hrs</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="sec">
+  <div class="w">
+    <p class="lbl">Services</p>
+    <h2>What I build for businesses</h2>
+    <p class="sub">Practical software that solves real problems. No templates, no shortcuts.</p>
+    <div class="sg">
+      <div class="sc"><div class="si">🤖</div><h3>Trading Bots & Automation</h3><p>Telegram bots with live session alerts, rule checklists, trade logging, and performance reports. E.g. BSTM Bot — 50+ daily users.</p></div>
+      <div class="sc"><div class="si">🌐</div><h3>Web Applications</h3><p>Full-stack apps with React and Supabase — fast, mobile-ready, and built to scale.</p></div>
+      <div class="sc"><div class="si">📊</div><h3>Business Dashboards</h3><p>Real-time data dashboards — portfolio trackers, KPI monitors, logistics tools. E.g. FlowLedger logistics app.</p></div>
+      <div class="sc"><div class="si">🔗</div><h3>API & Bot Integration</h3><p>Connect Telegram, payment APIs, and third-party services into one clean workflow.</p></div>
+      <div class="sc"><div class="si">🛒</div><h3>E-commerce & Marketplaces</h3><p>Custom storefronts with local Pula pricing, cart, wishlist, and product management.</p></div>
+      <div class="sc"><div class="si">⛓️</div><h3>Web3 & Crypto Tools</h3><p>Token reward systems, smart contract frontends, and BSC-based DeFi integrations. E.g. THoBoCoin.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div id="testimonials" class="sec">
+  <div class="w">
+    <p class="lbl">Testimonials</p>
+    <h2>What users say</h2>
+    <div class="tg">
+      <div class="tc">
+        <p>"The bot completely changed how I trade. The checklist keeps me disciplined — I stopped overtrading in the first week of using it."</p>
+        <div class="ta">K. Molefe — Trader, Gaborone</div>
+      </div>
+      <div class="tc">
+        <p>"BSTM-X is clean and easy to follow. I can finally see my win rate and streaks clearly. It feels like a proper professional tool."</p>
+        <div class="ta">T. Sithole — Trader, Johannesburg</div>
+      </div>
+      <div class="tc">
+        <p>"He delivered the dashboard faster than I expected and explained everything clearly. The final product was exactly what I asked for."</p>
+        <div class="ta">M. Dube — Client, Francistown</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="sec">
+  <div class="w">
+    <p class="lbl">Live Work</p>
+    <h2>Projects in production</h2>
+    <p class="sub">Every project below is live. Click the links to verify.</p>
+    <div class="pl">
+
+      <div class="pc">
+        <div class="pt"><h3>BSTM Trading Discipline Bot</h3><a href="https://t.me/Todd366Bot" target="_blank" class="pl-link">↗ Open Bot</a></div>
+        <div class="metric">50+ daily users · 3 countries · 99.7% uptime</div>
+        <p class="pdesc">Telegram bot that enforces a 15-rule trading checklist, sends live NY/London session alerts, logs every trade, and generates performance reports automatically.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Telegram API</span><span class="tag">Supabase</span><span class="tag">Automation</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pt"><h3>BSTM-X Trading Platform</h3><a href="https://bstm-x.vercel.app" target="_blank" class="pl-link">↗ View Platform</a></div>
+        <div class="metric">Live beta · Real-time portfolio tracking · AI insights</div>
+        <p class="pdesc">Web dashboard for portfolio tracking, win-rate analytics, level progression, and AI-driven trade insights. Built for traders who need clarity on their performance.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Vercel</span><span class="tag">Supabase</span><span class="tag">Dashboard</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pt"><h3>FlowLedger — Logistics App</h3><a href="https://bstm-flowledger.vercel.app/" target="_blank" class="pl-link">↗ View App</a></div>
+        <div class="metric">Role-based auth · Manager dashboard · Live on Vercel</div>
+        <p class="pdesc">Logistics management app with PIN-based role authentication, manager performance metrics, quick stats leaderboard, and a fully responsive UI deployed on Vercel.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Vercel</span><span class="tag">Role Auth</span><span class="tag">Logistics</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pt"><h3>THoBoCoin (THB) — Crypto Rewards</h3><a href="https://thobocoin-project-frontend.vercel.app/" target="_blank" class="pl-link">↗ View Project</a></div>
+        <div class="metric">BSC Testnet · Smart contract deployed · Web3 frontend</div>
+        <p class="pdesc">Crypto token reward system on Binance Smart Chain Testnet. Users earn THB tokens through platform activity via a live Web3 frontend connected to a deployed smart contract.</p>
+        <div class="tags"><span class="tag">Web3</span><span class="tag">BSC Testnet</span><span class="tag">ethers.js</span><span class="tag">React</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pt"><h3>BSTM Marketplace</h3><a href="https://todd366.github.io/bstm-marketplace-app/index.html" target="_blank" class="pl-link">↗ View Marketplace</a></div>
+        <div class="metric">Pula + THB pricing · Cart & wishlist · Botswana products</div>
+        <p class="pdesc">E-commerce marketplace with Botswana-specific products, dual Pula/THB token pricing, cart, wishlist, search, and product modals. Built with React and Tailwind CSS.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">E-commerce</span><span class="tag">GitHub Pages</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pt"><h3>BSTM·NET — Network Dashboard</h3><a href="https://todd366.github.io/bstm-ecosystem-network/" target="_blank" class="pl-link">↗ View Dashboard</a></div>
+        <div class="metric">127 live nodes · Real-time Supabase data · 4 themes</div>
+        <p class="pdesc">Network operations dashboard visualising 127 organisational nodes from a live Supabase database. Includes task management, Realtime subscriptions, and four switchable themes.</p>
+        <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Supabase Realtime</span><span class="tag">GitHub Pages</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WHY ME -->
+<div id="why" class="sec">
+  <div class="w">
+    <p class="lbl">Why Work With Me</p>
+    <h2>What you can expect</h2>
+    <div class="wg">
+      <div class="wi"><h4>🚀 Fast delivery</h4><p>Most projects ship in 1–3 weeks. You get a working product, not a promise.</p></div>
+      <div class="wi"><h4>🔍 Honest pricing</h4><p>You get a clear quote before any work starts. No surprises at the end.</p></div>
+      <div class="wi"><h4>📱 Mobile-first</h4><p>Every project is tested on mobile first — because that's where your users are.</p></div>
+      <div class="wi"><h4>📂 Verifiable work</h4><p>All 6 projects are live and public. You can check them right now, before hiring.</p></div>
+      <div class="wi"><h4>🌍 Local knowledge</h4><p>I understand Botswana's market, pricing, and users. That context matters.</p></div>
+      <div class="wi"><h4>🔒 Systems that stay up</h4><p>99.7% uptime across live production systems. Reliability isn't optional.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div id="pricing" class="sec">
+  <div class="w">
+    <p class="lbl">Pricing</p>
+    <h2>Simple, honest rates</h2>
+    <p class="sub">All prices in Botswana Pula. Exact quote after a free 30-minute consultation.</p>
+    <div class="pg">
+      <div class="prc">
+        <div class="ptag">Starter</div>
+        <h3>Simple Website</h3>
+        <div class="pnum">P2,500 <span>once-off</span></div>
+        <ul>
+          <li>Up to 5 pages</li>
+          <li>Mobile responsive</li>
+          <li>Contact form</li>
+          <li>GitHub Pages / Vercel hosting</li>
+          <li>1 round of revisions</li>
+        </ul>
+        <a href="#contact" class="btn bg">Get a Quote</a>
+      </div>
+      <div class="prc feat">
+        <div class="ptag">Most Popular</div>
+        <h3>Web App / Dashboard</h3>
+        <div class="pnum">P6,000+ <span>per project</span></div>
+        <ul>
+          <li>Custom web application</li>
+          <li>Database & backend (Supabase)</li>
+          <li>User login & role management</li>
+          <li>Vercel deployment</li>
+          <li>2 weeks post-launch support</li>
+        </ul>
+        <a href="#contact" class="btn bp">Get a Quote</a>
+      </div>
+      <div class="prc">
+        <div class="ptag">Specialist</div>
+        <h3>Trading Bot / Automation</h3>
+        <div class="pnum">P5,000+ <span>per project</span></div>
+        <ul>
+          <li>Custom Telegram bot</li>
+          <li>Alerts, rules & automation logic</li>
+          <li>Performance tracking & reports</li>
+          <li>Supabase database integration</li>
+          <li>Ongoing maintenance available</li>
+        </ul>
+        <a href="#contact" class="btn bg">Get a Quote</a>
+      </div>
+    </div>
+    <p class="pnote">All prices are starting points. Final quote given after a free 30-minute consultation. <a href="#contact">Get in touch.</a></p>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="sec">
+  <div class="w">
+    <p class="lbl">Tech Stack</p>
+    <h2>What I work with</h2>
+    <div class="skg">
+      <div class="skc">
+        <h4>Trading Bot Development</h4>
+        <ul>
+          <li>Telegram Bot API</li><li>Python automation</li>
+          <li>Rule-based checklists</li><li>Session alerts</li><li>Performance reports</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <h4>Web App & Dashboard Building</h4>
+        <ul>
+          <li>React frontends</li><li>Supabase (PostgreSQL)</li>
+          <li>Realtime data</li><li>REST APIs</li><li>Responsive design</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <h4>Web3 & FinTech Integration</h4>
+        <ul>
+          <li>ethers.js</li><li>BSC Smart Contracts</li>
+          <li>Token reward systems</li><li>DeFi frontends</li><li>Risk dashboards</li>
+        </ul>
+      </div>
+      <div class="skc">
+        <h4>Deployment & Delivery</h4>
+        <ul>
+          <li>Vercel</li><li>GitHub Pages</li>
+          <li>Git version control</li><li>Figma prototyping</li><li>Notion documentation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="sec">
+  <div class="w">
+    <p class="lbl">Contact</p>
+    <h2>Let's discuss your project</h2>
+    <div class="cg">
+      <div class="ci">
+        <p>Open to freelance projects, part-time contracts, and full-time roles. Tell me what you need — I'll give you an honest answer with no pressure.</p>
+        <div class="crows">
+          <div class="crow"><span class="clbl">Email</span><a href="mailto:gurutodd366@gmail.com">gurutodd366@gmail.com</a></div>
+          <div class="crow"><span class="clbl">BSTM Email</span><a href="mailto:bstm366@gmail.com">bstm366@gmail.com</a></div>
+          <div class="crow"><span class="clbl">Phone / WhatsApp</span><a href="tel:+26774393675">+267 74393675</a></div>
+          <div class="crow"><span class="clbl">BSTM Line</span><a href="tel:+26778355551">+267 78355551</a></div>
+          <div class="crow"><span class="clbl">GitHub</span><a href="https://github.com/todd366" target="_blank">github.com/todd366</a></div>
+          <div class="crow"><span class="clbl">Telegram</span><a href="https://t.me/bstm_signals" target="_blank">t.me/bstm_signals</a></div>
+          <div class="crow"><span class="clbl">Location</span><span>Gaborone, Botswana</span></div>
+        </div>
+      </div>
+      <form id="contactForm">
+        <input type="text" id="fn" placeholder="Your name" required>
+        <input type="email" id="fe" placeholder="Your email" required>
+        <select id="ft" required>
+          <option value="" disabled selected>What do you need?</option>
+          <option>Simple Website — from P2,500</option>
+          <option>Web Application / Dashboard — from P6,000</option>
+          <option>Trading Bot / Automation — from P5,000</option>
+          <option>API Integration</option>
+          <option>Something else — let's talk</option>
+        </select>
+        <textarea id="fm" placeholder="Briefly describe your project..." required></textarea>
+        <button type="submit" class="btn bp" id="sb">Send Message</button>
+        <div id="fs"></div>
+        <p class="fnote">I usually reply within 24 hours. No spam, ever.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div id="cta">
+  <div class="w">
+    <h2>Ready to build something?</h2>
+    <p>Let's talk about your project. No commitment required.</p>
+    <a href="mailto:gurutodd366@gmail.com" class="btn bp">Send Me an Email</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fi">
+    <p>© 2026 Thobo Atlang Mosanako · Gaborone, Botswana · SIPA Registered</p>
+    <ul>
+      <li><a href="https://github.com/todd366" target="_blank">GitHub</a></li>
+      <li><a href="https://github.com/bstm-systems" target="_blank">BSTM Systems</a></li>
+      <li><a href="https://t.me/bstm_signals" target="_blank">Telegram</a></li>
       <li><a href="https://t.me/Todd366Bot" target="_blank">Trading Bot</a></li>
       <li><a href="mailto:gurutodd366@gmail.com">Email</a></li>
     </ul>
-    <p style="margin-top: 2rem; font-size: 0.85rem; color: #888;">
-      Interests: AI & Automation | Disciplined Trading Systems | Digital Innovation in Emerging Markets | Long-Horizon Institutional Design
-    </p>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    // Create animated background particles
-    const particlesContainer = document.querySelector('.particles');
-    for (let i = 0; i < 30; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 20 + 's';
-      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-      particlesContainer.appendChild(particle);
-    }
-
-    // Smooth scroll for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({behavior:'smooth'});
     });
+  });
 
-    // Stagger section animations
-    document.querySelectorAll('section').forEach((section, index) => {
-      section.style.animationDelay = `${index * 0.15}s`;
-    });
+  // Form — opens mailto pre-filled
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const n = document.getElementById('fn').value;
+    const em = document.getElementById('fe').value;
+    const ty = document.getElementById('ft').value;
+    const msg = document.getElementById('fm').value;
+    const btn = document.getElementById('sb');
+    const fs = document.getElementById('fs');
+    const subj = encodeURIComponent('Project Enquiry: ' + ty);
+    const body = encodeURIComponent('Name: ' + n + '\nEmail: ' + em + '\nService: ' + ty + '\n\nMessage:\n' + msg);
+    btn.textContent = 'Opening email...';
+    btn.disabled = true;
+    window.location.href = 'mailto:gurutodd366@gmail.com?subject=' + subj + '&body=' + body;
+    setTimeout(() => {
+      fs.textContent = '✓ Email app opened. I\'ll reply within 24 hours.';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      this.reset();
+    }, 2500);
+  });
 
-    // Intersection Observer for scroll reveal animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          if (entry.target.classList.contains('stat') || 
-              entry.target.classList.contains('card')) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        }
-      });
-    }, { 
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observe all reveal elements
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Observe cards and stats
-    document.querySelectorAll('.card, .stat').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(40px)';
-      el.style.transition = 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
-      observer.observe(el);
-    });
-
-    // Add stagger effect to grid items
-    document.querySelectorAll('.grid').forEach(grid => {
-      const cards = grid.querySelectorAll('.card');
-      cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-      });
-    });
-
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-      const hero = document.querySelector('#hero');
-      const scrolled = window.pageYOffset;
-      if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight);
-      }
-    });
-
-    // Add typing effect to hero subtitle (optional enhancement)
-    const subtitle = document.querySelector('.subtitle');
-    if (subtitle) {
-      const text = subtitle.textContent;
-      subtitle.textContent = '';
-      subtitle.style.opacity = '1';
-      let i = 0;
-      
-      function typeWriter() {
-        if (i < text.length) {
-          subtitle.textContent += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, 50);
-        }
-      }
-      
-      setTimeout(typeWriter, 1000);
-    }
-
-    // Form enhancement - add loading state
-    const form = document.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const button = this.querySelector('button[type="submit"]');
-        const originalText = button.textContent;
-        button.textContent = 'Sending...';
-        button.disabled = true;
-        
-        setTimeout(() => {
-          alert('Thank you for your message! I will get back to you soon.');
-          form.reset();
-          button.textContent = originalText;
-          button.disabled = false;
-        }, 1000);
-      });
-    }
-
-    // Add active state to navigation based on scroll position
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('nav a[href^="#"]');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.style.color = '';
-        link.style.background = '';
-        if (link.getAttribute('href') === `#${current}`) {
-          link.style.color = 'var(--primary)';
-          link.style.background = 'rgba(76, 175, 80, 0.1)';
-        }
-      });
-    });
-
-    // Add counter animation for stats
-    function animateCounter(element, target) {
-      let current = 0;
-      const increment = target / 100;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          element.textContent = target + (element.textContent.includes('%') ? '%' : '+');
-          clearInterval(timer);
-        } else {
-          element.textContent = Math.floor(current) + (element.textContent.includes('%') ? '%' : '+');
-        }
-      }, 20);
-    }
-
-    // Trigger counter animation when stats come into view
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const h3 = entry.target.querySelector('h3');
-          const text = h3.textContent;
-          const num = parseFloat(text);
-          if (!isNaN(num)) {
-            h3.textContent = '0';
-            animateCounter(h3, num);
-          }
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat').forEach(stat => {
-      statsObserver.observe(stat);
-    });
-
-    // Add mouse trail effect (subtle)
-    document.addEventListener('mousemove', (e) => {
-      const trail = document.createElement('div');
-      trail.style.position = 'fixed';
-      trail.style.width = '4px';
-      trail.style.height = '4px';
-      trail.style.borderRadius = '50%';
-      trail.style.background = 'rgba(76, 175, 80, 0.5)';
-      trail.style.left = e.clientX + 'px';
-      trail.style.top = e.clientY + 'px';
-      trail.style.pointerEvents = 'none';
-      trail.style.zIndex = '9999';
-      trail.style.transition = 'all 0.5s ease';
-      
-      document.body.appendChild(trail);
-      
-      setTimeout(() => {
-        trail.style.opacity = '0';
-        trail.style.transform = 'scale(0)';
-      }, 10);
-      
-      setTimeout(() => {
-        trail.remove();
-      }, 500);
-    });
-
-    // Console easter egg
-    console.log('%c👋 Hey there!', 'font-size: 20px; color: #4CAF50; font-weight: bold;');
-    console.log('%cInterested in the code behind this portfolio?', 'font-size: 14px; color: #81C784;');
-    console.log('%cCheck out my GitHub: https://github.com/todd366', 'font-size: 12px; color: #b0b0b0;');
-    console.log('%cOr reach out: gurutodd366@gmail.com', 'font-size: 12px; color: #b0b0b0;');
-  </script>
+  // Active nav
+  const secs = document.querySelectorAll('[id]');
+  const links = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    links.forEach(l => { l.style.color = l.getAttribute('href') === '#' + cur ? 'var(--t)' : ''; });
+  });
+</script>
 </body>
-  </html>
+        </html>

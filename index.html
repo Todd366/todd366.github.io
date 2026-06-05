@@ -3,179 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thobo Atlang Mosanako — Full-Stack Developer building trading bots, web apps, and dashboards for businesses in Botswana.">
-  <title>Thobo Mosanako | Developer & FinTech Builder</title>
+  <meta name="description" content="Thobo Atlang Mosanako — Full-stack developer in Gaborone, Botswana. I build trading bots, web apps, and dashboards for businesses.">
+  <meta property="og:title" content="Thobo Mosanako | Developer & FinTech Builder">
+  <meta property="og:description" content="Full-stack developer building trading bots, web apps, and dashboards. Based in Gaborone, Botswana.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://todd366.github.io">
+  <title>Thobo Mosanako | Developer & FinTech Builder · Gaborone, Botswana</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --g:#22c55e;--bg:#0f0f0f;--s:#161616;--s2:#1c1c1c;
-      --b:#2a2a2a;--t:#f0f0f0;--m:#888;--max:880px
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --g: #22c55e;
+      --bg: #0f0f0f;
+      --s: #161616;
+      --s2: #1e1e1e;
+      --b: #2a2a2a;
+      --t: #f0f0f0;
+      --m: #999;
+      --max: 860px;
     }
-    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);font-size:16px;line-height:1.65}
-    a{color:inherit;text-decoration:none}
 
-    /* NAV */
-    nav{position:sticky;top:0;background:rgba(15,15,15,.97);border-bottom:1px solid var(--b);z-index:100}
-    .ni{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:56px}
-    .logo{font-weight:800;font-size:1.05rem;letter-spacing:-.5px}.logo span{color:var(--g)}
-    nav ul{list-style:none;display:flex;gap:1.8rem}
-    nav a{color:var(--m);font-size:.85rem;transition:color .2s}
-    nav a:hover{color:var(--t)}
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--t); font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
 
-    /* WRAP / SECTIONS */
-    .w{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
-    .sec{padding:4.5rem 0;border-top:1px solid var(--b)}
-    .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--g);font-weight:600;margin-bottom:.6rem}
-    h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:.7rem;letter-spacing:-.5px}
-    .sub{color:var(--m);font-size:.93rem;margin-bottom:2rem;max-width:500px;line-height:1.7}
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; background: rgba(15,15,15,.98); border-bottom: 1px solid var(--b); z-index: 200; }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+    .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -.5px; }
+    .logo span { color: var(--g); }
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links a { color: var(--m); font-size: .85rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--t); }
 
-    /* BUTTONS */
-    .btn{display:inline-block;padding:.7rem 1.6rem;border-radius:6px;font-size:.9rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s,transform .15s}
-    .btn:hover{opacity:.85;transform:translateY(-1px)}
-    .bp{background:var(--g);color:#000}
-    .bg{background:transparent;color:var(--t);border:1px solid var(--b)}
+    /* hamburger */
+    .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .ham span { display: block; width: 22px; height: 2px; background: var(--t); border-radius: 2px; transition: all .25s; }
+    .ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .ham.open span:nth-child(2) { opacity: 0; }
+    .ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* HERO */
-    #hero{padding:5.5rem 0 4.5rem}
-    .avail{display:inline-flex;align-items:center;gap:.45rem;background:rgba(34,197,94,.08);color:var(--g);border:1px solid rgba(34,197,94,.2);padding:.28rem .85rem;border-radius:100px;font-size:.78rem;margin-bottom:1.8rem}
-    .avail::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0}
-    #hero h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:800;line-height:1.15;letter-spacing:-1px;margin-bottom:1rem}
-    #hero h1 span{color:var(--g)}
-    #hero .hs{font-size:1rem;color:var(--m);margin-bottom:2rem;max-width:420px}
-    .brow{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+    .mobile-menu { display: none; background: var(--s); border-bottom: 1px solid var(--b); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: .9rem 1.5rem; color: var(--m); font-size: .95rem; border-bottom: 1px solid var(--b); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--t); background: var(--s2); }
 
-    /* TRUST STRIP */
-    #trust{padding:1.6rem 0;border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
-    .tstrip{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center}
-    .ti{font-size:.82rem;color:var(--m);display:flex;align-items:center;gap:.45rem}
-    .ti strong{color:var(--t);font-size:1rem}
-    .ti .big{font-size:1.3rem;font-weight:800;color:var(--g)}
+    /* ── LAYOUT ── */
+    .w { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+    .sec { padding: 4.5rem 0; border-top: 1px solid var(--b); }
+    .lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--g); font-weight: 600; margin-bottom: .6rem; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: .7rem; letter-spacing: -.5px; }
+    .sub { color: var(--m); font-size: .93rem; margin-bottom: 2rem; max-width: 500px; line-height: 1.7; }
+    .sec-cta { margin-top: 2rem; font-size: .88rem; color: var(--m); }
+    .sec-cta a { color: var(--g); font-weight: 600; }
+    .sec-cta a:hover { text-decoration: underline; }
 
-    /* SIPA BADGE */
-    .sipa{display:inline-flex;align-items:center;gap:.6rem;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:.6rem 1.1rem;font-size:.82rem;color:var(--t);font-weight:600;margin-bottom:1.4rem}
-    .sipa span{color:var(--g)}
+    /* ── BUTTONS ── */
+    .btn { display: inline-block; padding: .72rem 1.6rem; border-radius: 6px; font-size: .9rem; font-weight: 600; cursor: pointer; border: none; font-family: inherit; transition: opacity .2s, transform .15s; }
+    .btn:hover { opacity: .85; transform: translateY(-1px); }
+    .bp { background: var(--g); color: #000; }
+    .bg { background: transparent; color: var(--t); border: 1px solid var(--b); }
 
-    /* SERVICES */
-    .sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
-    .sc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.5rem}
-    .sc:hover{border-color:#333}
-    .si{font-size:1.4rem;margin-bottom:.7rem}
-    .sc h3{font-size:.93rem;font-weight:700;margin-bottom:.4rem}
-    .sc p{font-size:.83rem;color:var(--m);line-height:1.6}
+    /* ── HERO ── */
+    #hero { padding: 5rem 0 4rem; }
+    .cipa { display: inline-flex; align-items: center; gap: .5rem; background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.28); border-radius: 7px; padding: .5rem 1rem; font-size: .82rem; color: var(--t); font-weight: 600; margin-bottom: 1.6rem; }
+    .cipa span { color: var(--g); }
+    #hero h1 { font-size: clamp(2rem, 5vw, 2.9rem); font-weight: 800; line-height: 1.15; letter-spacing: -1px; margin-bottom: .9rem; }
+    #hero h1 span { color: var(--g); }
+    .hero-sub { font-size: 1rem; color: var(--m); margin-bottom: 2rem; }
+    .brow { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .avail { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; color: var(--m); margin-top: 1.4rem; }
+    .avail::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--g); flex-shrink: 0; }
 
-    /* PROJECTS */
-    .pl{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
-    .pc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.6rem}
-    .pc:hover{border-color:#333}
-    .pt{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
-    .pt h3{font-size:1rem;font-weight:700}
-    .pl-link{font-size:.8rem;color:var(--g);white-space:nowrap;font-weight:600}
-    .pl-link:hover{text-decoration:underline}
-    .metric{display:inline-block;font-size:.77rem;background:rgba(34,197,94,.08);color:var(--g);border:1px solid rgba(34,197,94,.18);padding:.18rem .65rem;border-radius:100px;margin-bottom:.75rem}
-    .pdesc{font-size:.87rem;color:var(--m);margin-bottom:.9rem;line-height:1.65}
-    .tags{display:flex;flex-wrap:wrap;gap:.35rem}
-    .tag{font-size:.72rem;background:var(--s2);border:1px solid var(--b);color:var(--m);padding:.15rem .55rem;border-radius:100px}
+    /* ── TRUST STRIP ── */
+    #trust { padding: 1.5rem 0; border-top: 1px solid var(--b); border-bottom: 1px solid var(--b); }
+    .tstrip { display: flex; flex-wrap: wrap; gap: 1.2rem 3rem; align-items: center; }
+    .ti { font-size: .83rem; color: var(--m); display: flex; align-items: center; gap: .4rem; }
+    .ti .n { font-size: 1.25rem; font-weight: 800; color: var(--g); line-height: 1; }
 
-    /* WHY ME */
-    .wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
-    .wi{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.4rem}
-    .wi h4{font-size:.92rem;font-weight:700;margin-bottom:.35rem}
-    .wi p{font-size:.83rem;color:var(--m);line-height:1.6}
+    /* ── ABOUT ── */
+    .about-bio { font-size: .96rem; color: var(--m); line-height: 1.8; max-width: 640px; }
+    .about-bio + .about-bio { margin-top: .9rem; }
 
-    /* PRICING */
-    .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
-    .prc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.8rem;display:flex;flex-direction:column}
-    .prc.feat{border-color:var(--g)}
-    .ptag{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--m);margin-bottom:.4rem}
-    .prc h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-    .pnum{font-size:1.6rem;font-weight:800;color:var(--g);margin:.6rem 0 1rem}
-    .pnum span{font-size:.85rem;color:var(--m);font-weight:400}
-    .prc ul{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.4rem;flex:1}
-    .prc li{font-size:.84rem;color:var(--m);display:flex;gap:.45rem;align-items:flex-start}
-    .prc li::before{content:'✓';color:var(--g);font-weight:700;flex-shrink:0}
-    .pnote{text-align:center;color:var(--m);font-size:.82rem;margin-top:1.5rem}
-    .pnote a{color:var(--g)}
+    /* ── SERVICES ── */
+    .sg { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .sc { background: var(--s); border: 1px solid var(--b); border-radius: 10px; padding: 1.5rem; }
+    .sc:hover { border-color: #3a3a3a; }
+    .si { font-size: 1.4rem; margin-bottom: .7rem; }
+    .sc h3 { font-size: .93rem; font-weight: 700; margin-bottom: .4rem; }
+    .sc p { font-size: .83rem; color: var(--m); line-height: 1.6; }
+    .sc .eg { font-size: .76rem; color: var(--g); margin-top: .5rem; font-style: italic; }
 
-    /* SKILLS */
-    .skg{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:1rem;margin-top:2rem}
-    .skc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.3rem}
-    .skc h4{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--m);margin-bottom:.9rem}
-    .skc ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
-    .skc li{font-size:.86rem;color:var(--t);display:flex;align-items:center;gap:.45rem}
-    .skc li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0}
+    /* ── PROJECTS ── */
+    .pl { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .pc { background: var(--s); border: 1px solid var(--b); border-radius: 10px; padding: 1.6rem; }
+    .pc:hover { border-color: #3a3a3a; }
+    .pt { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: .45rem; }
+    .pt h3 { font-size: 1rem; font-weight: 700; }
+    .plinks { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .pl-link { font-size: .8rem; color: var(--g); font-weight: 600; }
+    .pl-link:hover { text-decoration: underline; }
+    .pl-gh { font-size: .78rem; color: var(--m); }
+    .pl-gh:hover { color: var(--t); }
+    .metric { display: inline-block; font-size: .76rem; background: rgba(34,197,94,.08); color: var(--g); border: 1px solid rgba(34,197,94,.18); padding: .16rem .6rem; border-radius: 100px; margin-bottom: .7rem; }
+    .pdesc { font-size: .87rem; color: var(--m); margin-bottom: .9rem; line-height: 1.65; }
+    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag { font-size: .72rem; background: var(--s2); border: 1px solid var(--b); color: var(--m); padding: .15rem .55rem; border-radius: 100px; }
 
-    /* TESTIMONIALS */
-    .tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
-    .tc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:1.6rem}
-    .tc p{font-size:.9rem;color:var(--t);line-height:1.7;margin-bottom:1rem}
-    .ta{font-size:.78rem;color:var(--g);font-weight:600}
-    .cg{display:grid;grid-template-columns:1fr 1.2fr;gap:3.5rem;margin-top:2rem}
-    .ci p{color:var(--m);font-size:.92rem;margin-bottom:1.8rem;line-height:1.75}
-    .crows{display:flex;flex-direction:column;gap:1rem}
-    .crow{display:flex;flex-direction:column;gap:.15rem}
-    .clbl{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--m)}
-    .crow a,.crow span{color:var(--t);font-size:.9rem}
-    .crow a:hover{color:var(--g)}
-    form{display:flex;flex-direction:column;gap:.8rem}
-    input,textarea,select{background:var(--s);border:1px solid var(--b);border-radius:6px;color:var(--t);font-family:inherit;font-size:.9rem;padding:.8rem .95rem;width:100%;transition:border-color .2s}
-    input:focus,textarea:focus,select:focus{outline:none;border-color:#444}
-    textarea{min-height:115px;resize:vertical}
-    select option{background:var(--s)}
-    .fnote{font-size:.76rem;color:var(--m)}
-    #fs{font-size:.83rem;color:var(--g);min-height:1.1rem}
+    /* ── WHY ME ── */
+    .wg { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .wi { background: var(--s); border: 1px solid var(--b); border-radius: 10px; padding: 1.4rem; }
+    .wi h4 { font-size: .93rem; font-weight: 700; margin-bottom: .35rem; }
+    .wi p { font-size: .83rem; color: var(--m); line-height: 1.6; }
+    .wi .proof { font-size: .76rem; color: var(--g); margin-top: .5rem; font-style: italic; }
 
-    /* CTA STRIP */
-    #cta{padding:4rem 0;border-top:1px solid var(--b);text-align:center}
-    #cta h2{margin-bottom:.6rem}
-    #cta p{color:var(--m);font-size:.95rem;margin-bottom:1.8rem}
+    /* ── PRICING ── */
+    .pg { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .prc { background: var(--s); border: 1px solid var(--b); border-radius: 10px; padding: 1.8rem; display: flex; flex-direction: column; }
+    .prc.feat { border-color: var(--g); }
+    .ptag { font-size: .72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--m); margin-bottom: .4rem; }
+    .prc h3 { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
+    .pnum { font-size: 1.5rem; font-weight: 800; color: var(--g); margin: .6rem 0 .3rem; }
+    .pnum span { font-size: .82rem; color: var(--m); font-weight: 400; }
+    .pfrom { font-size: .75rem; color: var(--m); margin-bottom: 1rem; }
+    .prc ul { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.4rem; flex: 1; }
+    .prc li { font-size: .83rem; color: var(--m); display: flex; gap: .45rem; }
+    .prc li::before { content: '✓'; color: var(--g); font-weight: 700; flex-shrink: 0; }
+    .pnote { text-align: center; color: var(--m); font-size: .82rem; margin-top: 1.5rem; line-height: 1.6; }
+    .pnote a { color: var(--g); }
 
-    /* FOOTER */
-    footer{border-top:1px solid var(--b);padding:1.8rem 1.5rem}
-    .fi{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    footer p{font-size:.8rem;color:var(--m)}
-    footer ul{list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap}
-    footer a{color:var(--m);font-size:.8rem;transition:color .2s}
-    footer a:hover{color:var(--t)}
+    /* ── SKILLS ── */
+    .skg { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .skc { background: var(--s); border: 1px solid var(--b); border-radius: 10px; padding: 1.3rem; }
+    .skc h4 { font-size: .82rem; font-weight: 700; color: var(--t); margin-bottom: .9rem; }
+    .skc ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .skc li { font-size: .83rem; color: var(--m); display: flex; align-items: center; gap: .4rem; }
+    .skc li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--g); flex-shrink: 0; }
 
-    /* MOBILE */
-    @media(max-width:640px){
-      nav ul{display:none}
-      .cg{grid-template-columns:1fr;gap:2rem}
-      .fi{flex-direction:column;text-align:center}
-      .sg,.wg,.pg,.skg,.tg{grid-template-columns:1fr}
-      .pt{flex-direction:column;gap:.3rem}
-      .brow{flex-direction:column;align-items:flex-start}
-      .tstrip{flex-direction:column;gap:1rem}
-      h2{font-size:1.5rem}
-      #hero h1{font-size:2rem}
+    /* ── CONTACT ── */
+    .cg { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3.5rem; margin-top: 2rem; }
+    .ci p { color: var(--m); font-size: .92rem; margin-bottom: 1.8rem; line-height: 1.75; }
+    .crows { display: flex; flex-direction: column; gap: 1rem; }
+    .crow { display: flex; flex-direction: column; gap: .15rem; }
+    .clbl { font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--m); }
+    .crow a, .crow span { color: var(--t); font-size: .9rem; }
+    .crow a:hover { color: var(--g); }
+    form { display: flex; flex-direction: column; gap: .8rem; }
+    input, textarea, select { background: var(--s); border: 1px solid var(--b); border-radius: 6px; color: var(--t); font-family: inherit; font-size: .9rem; padding: .8rem .95rem; width: 100%; transition: border-color .2s; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #444; }
+    textarea { min-height: 115px; resize: vertical; }
+    select option { background: var(--s); }
+    .fnote { font-size: .76rem; color: var(--m); }
+    #fs { font-size: .85rem; min-height: 1.2rem; display: none; padding: .7rem 1rem; border-radius: 6px; margin-top: .2rem; }
+    #fs.ok { display: block; background: rgba(34,197,94,.1); color: var(--g); border: 1px solid rgba(34,197,94,.2); }
+    #fs.err { display: block; background: rgba(239,68,68,.1); color: #f87171; border: 1px solid rgba(239,68,68,.2); }
+
+    /* ── CTA STRIP ── */
+    #cta { padding: 4rem 0; border-top: 1px solid var(--b); text-align: center; }
+    #cta p { color: var(--m); font-size: .95rem; margin-bottom: 1.8rem; margin-top: .5rem; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--b); padding: 1.8rem 1.5rem; }
+    .fi { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    footer p { font-size: .78rem; color: var(--m); line-height: 1.6; }
+    footer ul { list-style: none; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    footer a { color: var(--m); font-size: .78rem; transition: color .2s; }
+    footer a:hover { color: var(--t); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 660px) {
+      .nav-links { display: none; }
+      .ham { display: flex; }
+      .cg { grid-template-columns: 1fr; gap: 2rem; }
+      .fi { flex-direction: column; align-items: flex-start; gap: .8rem; }
+      .sg, .wg, .pg, .skg { grid-template-columns: 1fr; }
+      .brow { flex-direction: column; align-items: flex-start; }
+      .tstrip { gap: .9rem 2rem; }
+      #hero { padding: 3.5rem 0 3rem; }
+      .sec { padding: 3.5rem 0; }
+      .pt { flex-direction: column; gap: .3rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="ni">
+  <div class="nav-inner">
     <a class="logo" href="#hero">TAM<span>.</span></a>
-    <ul>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Work</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="ham" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mob">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#services" class="mob-link">Services</a>
+    <a href="#projects" class="mob-link">Work</a>
+    <a href="#pricing" class="mob-link">Pricing</a>
+    <a href="#contact" class="mob-link">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="w">
 <section id="hero">
-  <div class="avail">Available for projects · Gaborone, Botswana</div>
-  <h1>I build <span>trading bots,</span><br>web apps & dashboards<br>for businesses.</h1>
-  <div class="sipa">🛡️ <span>CIPA Registered</span> Business · Botswana</div>
-  <p class="hs">6 live projects. 50+ users. Built in Botswana.</p>
+  <div class="cipa">🛡️ <span>CIPA Registered</span> &nbsp;·&nbsp; Gaborone, Botswana</div>
+  <h1>I build <span>software</span> that<br>businesses rely on.</h1>
+  <p class="hero-sub">Trading bots, web apps, and dashboards — live, verifiable, and built to last.</p>
   <div class="brow">
     <a href="#contact" class="btn bp">Hire Me</a>
     <a href="#projects" class="btn bg">See My Work</a>
   </div>
+  <p class="avail">Available for new projects</p>
 </section>
 </div>
 
@@ -183,11 +231,23 @@
 <div id="trust">
   <div class="w">
     <div class="tstrip">
-      <div class="ti">🟢 <span class="big">50+</span>&nbsp;<strong>active users</strong>&nbsp;across 3 countries</div>
-      <div class="ti">📈 <span class="big">99.7%</span>&nbsp;<strong>uptime</strong>&nbsp;on live systems</div>
-      <div class="ti">🔗 <span class="big">6</span>&nbsp;<strong>live projects</strong>&nbsp;— publicly verifiable</div>
-      <div class="ti">⚡ <strong>Replies within 24 hrs</strong></div>
+      <div class="ti"><span class="n">50+</span>&nbsp;active users across 3 countries</div>
+      <div class="ti"><span class="n">99.7%</span>&nbsp;uptime on live systems</div>
+      <div class="ti"><span class="n">6</span>&nbsp;live projects — all publicly verifiable</div>
+      <div class="ti"><span class="n">24hr</span>&nbsp;reply guarantee</div>
     </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="sec">
+  <div class="w">
+    <p class="lbl">About</p>
+    <h2>Who I am</h2>
+    <p class="about-bio">I'm Thobo Atlang Mosanako — a self-taught full-stack developer based in Gaborone, Botswana. I started building software to solve problems I saw firsthand in the trading and business world, and everything I've shipped has been live and publicly accessible from day one.</p>
+    <p class="about-bio">I founded BSTM — a suite of FinTech tools including a trading bot serving 50+ users, a web dashboard, a logistics app, and a crypto rewards system. Every project is verifiable: no mockups, no demos — real systems, real users.</p>
+    <p class="about-bio">I work cleanly, communicate honestly, and deliver on time. If you need something built, I'll tell you exactly what it costs and how long it takes — before any work starts.</p>
+    <div class="sec-cta">Want to see the code? <a href="https://github.com/todd366" target="_blank">github.com/todd366 →</a></div>
   </div>
 </div>
 
@@ -195,38 +255,47 @@
 <div id="services" class="sec">
   <div class="w">
     <p class="lbl">Services</p>
-    <h2>What I build for businesses</h2>
-    <p class="sub">Practical software that solves real problems. No templates, no shortcuts.</p>
+    <h2>What I build</h2>
+    <p class="sub">Practical software for real business problems.</p>
     <div class="sg">
-      <div class="sc"><div class="si">🤖</div><h3>Trading Bots & Automation</h3><p>Telegram bots with live session alerts, rule checklists, trade logging, and performance reports. E.g. BSTM Bot — 50+ daily users.</p></div>
-      <div class="sc"><div class="si">🌐</div><h3>Web Applications</h3><p>Full-stack apps with React and Supabase — fast, mobile-ready, and built to scale.</p></div>
-      <div class="sc"><div class="si">📊</div><h3>Business Dashboards</h3><p>Real-time data dashboards — portfolio trackers, KPI monitors, logistics tools. E.g. FlowLedger logistics app.</p></div>
-      <div class="sc"><div class="si">🔗</div><h3>API & Bot Integration</h3><p>Connect Telegram, payment APIs, and third-party services into one clean workflow.</p></div>
-      <div class="sc"><div class="si">🛒</div><h3>E-commerce & Marketplaces</h3><p>Custom storefronts with local Pula pricing, cart, wishlist, and product management.</p></div>
-      <div class="sc"><div class="si">⛓️</div><h3>Web3 & Crypto Tools</h3><p>Token reward systems, smart contract frontends, and BSC-based DeFi integrations. E.g. THoBoCoin.</p></div>
+      <div class="sc">
+        <div class="si">🤖</div>
+        <h3>Trading Bots & Automation</h3>
+        <p>Telegram bots with live alerts, rule checklists, trade logging, and auto-reports.</p>
+        <p class="eg">→ e.g. BSTM Bot — 50+ daily users, 99.7% uptime</p>
+      </div>
+      <div class="sc">
+        <div class="si">🌐</div>
+        <h3>Web Applications</h3>
+        <p>Full-stack apps built with React and Supabase. Fast, mobile-ready, deployed to Vercel.</p>
+        <p class="eg">→ e.g. BSTM-X Platform — live portfolio dashboard</p>
+      </div>
+      <div class="sc">
+        <div class="si">📊</div>
+        <h3>Business Dashboards</h3>
+        <p>Real-time dashboards for KPIs, logistics, performance tracking, and operations.</p>
+        <p class="eg">→ e.g. FlowLedger — role-based logistics management</p>
+      </div>
+      <div class="sc">
+        <div class="si">🛒</div>
+        <h3>E-commerce & Marketplaces</h3>
+        <p>Custom storefronts with Pula pricing, cart, wishlist, and product management.</p>
+        <p class="eg">→ e.g. BSTM Marketplace — Botswana-focused</p>
+      </div>
+      <div class="sc">
+        <div class="si">🔗</div>
+        <h3>API & System Integration</h3>
+        <p>Connect Telegram, payment gateways, and third-party APIs into one workflow.</p>
+        <p class="eg">→ e.g. THoBoCoin — BSC smart contract + Web3 frontend</p>
+      </div>
+      <div class="sc">
+        <div class="si">📱</div>
+        <h3>PWAs & Mobile-First Apps</h3>
+        <p>Progressive web apps that work offline and install on any phone like a native app.</p>
+        <p class="eg">→ e.g. CabLink — ride-booking PWA for Gaborone</p>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div id="testimonials" class="sec">
-  <div class="w">
-    <p class="lbl">Testimonials</p>
-    <h2>What users say</h2>
-    <div class="tg">
-      <div class="tc">
-        <p>"The bot completely changed how I trade. The checklist keeps me disciplined — I stopped overtrading in the first week of using it."</p>
-        <div class="ta">K. Molefe — Trader, Gaborone</div>
-      </div>
-      <div class="tc">
-        <p>"BSTM-X is clean and easy to follow. I can finally see my win rate and streaks clearly. It feels like a proper professional tool."</p>
-        <div class="ta">T. Sithole — Trader, Johannesburg</div>
-      </div>
-      <div class="tc">
-        <p>"He delivered the dashboard faster than I expected and explained everything clearly. The final product was exactly what I asked for."</p>
-        <div class="ta">M. Dube — Client, Francistown</div>
-      </div>
-    </div>
+    <div class="sec-cta"><a href="#contact">Not sure what you need? Let's talk →</a></div>
   </div>
 </div>
 
@@ -235,52 +304,85 @@
   <div class="w">
     <p class="lbl">Live Work</p>
     <h2>Projects in production</h2>
-    <p class="sub">Every project below is live. Click the links to verify.</p>
+    <p class="sub">All six are live. Click any link to verify.</p>
     <div class="pl">
 
       <div class="pc">
-        <div class="pt"><h3>BSTM Trading Discipline Bot</h3><a href="https://t.me/Todd366Bot" target="_blank" class="pl-link">↗ Open Bot</a></div>
-        <div class="metric">50+ daily users · 3 countries · 99.7% uptime</div>
-        <p class="pdesc">Telegram bot that enforces a 15-rule trading checklist, sends live NY/London session alerts, logs every trade, and generates performance reports automatically.</p>
+        <div class="pt">
+          <h3>BSTM Trading Discipline Bot</h3>
+          <div class="plinks">
+            <a href="https://t.me/Todd366Bot" target="_blank" class="pl-link">↗ Open Bot</a>
+            <a href="https://github.com/todd366" target="_blank" class="pl-gh">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="metric">50+ daily users · 3 countries · 99.7% uptime · running since 2023</div>
+        <p class="pdesc">Enforces a 15-rule trading checklist via Telegram. Sends live NY/London session alerts, logs every trade, and generates weekly performance reports. Traders report fewer emotional mistakes within the first week of use.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Telegram API</span><span class="tag">Supabase</span><span class="tag">Automation</span></div>
       </div>
 
       <div class="pc">
-        <div class="pt"><h3>BSTM-X Trading Platform</h3><a href="https://bstm-x.vercel.app" target="_blank" class="pl-link">↗ View Platform</a></div>
-        <div class="metric">Live beta · Real-time portfolio tracking · AI insights</div>
-        <p class="pdesc">Web dashboard for portfolio tracking, win-rate analytics, level progression, and AI-driven trade insights. Built for traders who need clarity on their performance.</p>
-        <div class="tags"><span class="tag">React</span><span class="tag">Vercel</span><span class="tag">Supabase</span><span class="tag">Dashboard</span></div>
+        <div class="pt">
+          <h3>BSTM-X Trading Platform</h3>
+          <div class="plinks">
+            <a href="https://bstm-x.vercel.app" target="_blank" class="pl-link">↗ View Live</a>
+            <a href="https://github.com/todd366" target="_blank" class="pl-gh">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="metric">Live beta · Real-time portfolio data · AI trade insights (VENUS)</div>
+        <p class="pdesc">Web dashboard for tracking portfolio performance, win rates, level progression, and AI-driven trade feedback. Replaces manual spreadsheet tracking for active traders.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">Supabase</span><span class="tag">Vercel</span><span class="tag">Dashboard</span></div>
       </div>
 
       <div class="pc">
-        <div class="pt"><h3>FlowLedger — Logistics App</h3><a href="https://bstm-flowledger.vercel.app/" target="_blank" class="pl-link">↗ View App</a></div>
-        <div class="metric">Role-based auth · Manager dashboard · Live on Vercel</div>
-        <p class="pdesc">Logistics management app with PIN-based role authentication, manager performance metrics, quick stats leaderboard, and a fully responsive UI deployed on Vercel.</p>
+        <div class="pt">
+          <h3>FlowLedger — Logistics App</h3>
+          <div class="plinks">
+            <a href="https://bstm-flowledger.vercel.app/" target="_blank" class="pl-link">↗ View Live</a>
+          </div>
+        </div>
+        <div class="metric">Role-based PIN auth · Manager KPI dashboard · Deployed on Vercel</div>
+        <p class="pdesc">Logistics management app with PIN-based role authentication, manager performance metrics, quick stats leaderboard, and a responsive UI. Built to replace manual logistics tracking.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">Vercel</span><span class="tag">Role Auth</span><span class="tag">Logistics</span></div>
       </div>
 
       <div class="pc">
-        <div class="pt"><h3>THoBoCoin (THB) — Crypto Rewards</h3><a href="https://thobocoin-project-frontend.vercel.app/" target="_blank" class="pl-link">↗ View Project</a></div>
-        <div class="metric">BSC Testnet · Smart contract deployed · Web3 frontend</div>
-        <p class="pdesc">Crypto token reward system on Binance Smart Chain Testnet. Users earn THB tokens through platform activity via a live Web3 frontend connected to a deployed smart contract.</p>
-        <div class="tags"><span class="tag">Web3</span><span class="tag">BSC Testnet</span><span class="tag">ethers.js</span><span class="tag">React</span></div>
+        <div class="pt">
+          <h3>THoBoCoin (THB) — Crypto Rewards</h3>
+          <div class="plinks">
+            <a href="https://thobocoin-project-frontend.vercel.app/" target="_blank" class="pl-link">↗ View Live</a>
+          </div>
+        </div>
+        <div class="metric">Smart contract deployed on BSC Testnet · Live Web3 frontend</div>
+        <p class="pdesc">Crypto token reward system on Binance Smart Chain. Users earn THB tokens through platform activity. Includes a deployed smart contract and a connected React frontend.</p>
+        <div class="tags"><span class="tag">Web3</span><span class="tag">ethers.js</span><span class="tag">BSC Testnet</span><span class="tag">React</span></div>
       </div>
 
       <div class="pc">
-        <div class="pt"><h3>BSTM Marketplace</h3><a href="https://todd366.github.io/bstm-marketplace-app/index.html" target="_blank" class="pl-link">↗ View Marketplace</a></div>
-        <div class="metric">Pula + THB pricing · Cart & wishlist · Botswana products</div>
-        <p class="pdesc">E-commerce marketplace with Botswana-specific products, dual Pula/THB token pricing, cart, wishlist, search, and product modals. Built with React and Tailwind CSS.</p>
+        <div class="pt">
+          <h3>BSTM Marketplace</h3>
+          <div class="plinks">
+            <a href="https://todd366.github.io/bstm-marketplace-app/index.html" target="_blank" class="pl-link">↗ View Live</a>
+          </div>
+        </div>
+        <div class="metric">Pula + THB dual pricing · Cart, wishlist, search · GitHub Pages</div>
+        <p class="pdesc">E-commerce marketplace with Botswana-specific products, dual currency pricing (Pula + THB tokens), cart, wishlist, and product modals. Built for local market relevance.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">E-commerce</span><span class="tag">GitHub Pages</span></div>
       </div>
 
       <div class="pc">
-        <div class="pt"><h3>BSTM·NET — Network Dashboard</h3><a href="https://todd366.github.io/bstm-ecosystem-network/" target="_blank" class="pl-link">↗ View Dashboard</a></div>
-        <div class="metric">127 live nodes · Real-time Supabase data · 4 themes</div>
-        <p class="pdesc">Network operations dashboard visualising 127 organisational nodes from a live Supabase database. Includes task management, Realtime subscriptions, and four switchable themes.</p>
+        <div class="pt">
+          <h3>BSTM·NET — Network Operations Dashboard</h3>
+          <div class="plinks">
+            <a href="https://todd366.github.io/bstm-ecosystem-network/" target="_blank" class="pl-link">↗ View Live</a>
+          </div>
+        </div>
+        <div class="metric">127 live nodes · Real-time Supabase reads · 4 switchable themes</div>
+        <p class="pdesc">Network operations dashboard showing 127 organisational nodes pulled live from Supabase. Includes task management, realtime subscriptions, RLS security, and four UI themes.</p>
         <div class="tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Supabase Realtime</span><span class="tag">GitHub Pages</span></div>
       </div>
 
     </div>
+    <div class="sec-cta"><a href="https://github.com/todd366" target="_blank">View source code on GitHub →</a></div>
   </div>
 </div>
 
@@ -288,14 +390,37 @@
 <div id="why" class="sec">
   <div class="w">
     <p class="lbl">Why Work With Me</p>
-    <h2>What you can expect</h2>
+    <h2>What makes this different</h2>
     <div class="wg">
-      <div class="wi"><h4>🚀 Fast delivery</h4><p>Most projects ship in 1–3 weeks. You get a working product, not a promise.</p></div>
-      <div class="wi"><h4>🔍 Honest pricing</h4><p>You get a clear quote before any work starts. No surprises at the end.</p></div>
-      <div class="wi"><h4>📱 Mobile-first</h4><p>Every project is tested on mobile first — because that's where your users are.</p></div>
-      <div class="wi"><h4>📂 Verifiable work</h4><p>All 6 projects are live and public. You can check them right now, before hiring.</p></div>
-      <div class="wi"><h4>🌍 Local knowledge</h4><p>I understand Botswana's market, pricing, and users. That context matters.</p></div>
-      <div class="wi"><h4>🔒 Systems that stay up</h4><p>99.7% uptime across live production systems. Reliability isn't optional.</p></div>
+      <div class="wi">
+        <h4>🚀 Delivered in weeks, not months</h4>
+        <p>Most projects ship in 1–3 weeks. The BSTM·NET dashboard — 127 live nodes, 4 themes, Supabase Realtime — was built and deployed in days.</p>
+        <p class="proof">→ Proof: see the live GitHub Pages deployment</p>
+      </div>
+      <div class="wi">
+        <h4>📂 Everything is publicly verifiable</h4>
+        <p>Every project on this page is live and accessible right now. No mockups, no staging demos — real systems with real users.</p>
+        <p class="proof">→ Proof: click any project link above</p>
+      </div>
+      <div class="wi">
+        <h4>🔍 Honest quotes, no surprises</h4>
+        <p>You get a clear price and scope before any work starts. If it changes, I tell you first. No invoices you didn't expect.</p>
+        <p class="proof">→ See pricing section below</p>
+      </div>
+      <div class="wi">
+        <h4>📱 Built for phones first</h4>
+        <p>All six live projects are tested on mobile. The BSTM Bot was designed specifically for phone-first traders who don't sit at a desk.</p>
+        <p class="proof">→ Open any project on your phone now</p>
+      </div>
+      <div class="wi">
+        <h4>🌍 Knows the Botswana market</h4>
+        <p>Pula pricing, local product data, Gaborone-focused UX — I build for users here, not just copy a template from overseas.</p>
+        <p class="proof">→ See BSTM Marketplace</p>
+      </div>
+      <div class="wi">
+        <h4>🛡️ CIPA registered business</h4>
+        <p>Working with a registered business means clear accountability, proper invoicing, and a professional engagement from start to finish.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -304,26 +429,28 @@
 <div id="pricing" class="sec">
   <div class="w">
     <p class="lbl">Pricing</p>
-    <h2>Simple, honest rates</h2>
-    <p class="sub">All prices in Botswana Pula. Exact quote after a free 30-minute consultation.</p>
+    <h2>Straightforward rates</h2>
+    <p class="sub">All prices in Botswana Pula. These are starting points — your final quote comes after a free 30-minute call.</p>
     <div class="pg">
       <div class="prc">
         <div class="ptag">Starter</div>
         <h3>Simple Website</h3>
         <div class="pnum">P2,500 <span>once-off</span></div>
+        <p class="pfrom">Starting from — final quote after consultation</p>
         <ul>
           <li>Up to 5 pages</li>
           <li>Mobile responsive</li>
           <li>Contact form</li>
-          <li>GitHub Pages / Vercel hosting</li>
+          <li>GitHub Pages or Vercel hosting</li>
           <li>1 round of revisions</li>
         </ul>
-        <a href="#contact" class="btn bg">Get a Quote</a>
+        <a href="#contact" class="btn bg">Get a Free Quote</a>
       </div>
       <div class="prc feat">
         <div class="ptag">Most Popular</div>
         <h3>Web App / Dashboard</h3>
         <div class="pnum">P6,000+ <span>per project</span></div>
+        <p class="pfrom">Starting from — final quote after consultation</p>
         <ul>
           <li>Custom web application</li>
           <li>Database & backend (Supabase)</li>
@@ -331,23 +458,24 @@
           <li>Vercel deployment</li>
           <li>2 weeks post-launch support</li>
         </ul>
-        <a href="#contact" class="btn bp">Get a Quote</a>
+        <a href="#contact" class="btn bp">Get a Free Quote</a>
       </div>
       <div class="prc">
         <div class="ptag">Specialist</div>
         <h3>Trading Bot / Automation</h3>
         <div class="pnum">P5,000+ <span>per project</span></div>
+        <p class="pfrom">Starting from — final quote after consultation</p>
         <ul>
           <li>Custom Telegram bot</li>
-          <li>Alerts, rules & automation logic</li>
+          <li>Alerts, logic & rule enforcement</li>
           <li>Performance tracking & reports</li>
-          <li>Supabase database integration</li>
+          <li>Supabase database</li>
           <li>Ongoing maintenance available</li>
         </ul>
-        <a href="#contact" class="btn bg">Get a Quote</a>
+        <a href="#contact" class="btn bg">Get a Free Quote</a>
       </div>
     </div>
-    <p class="pnote">All prices are starting points. Final quote given after a free 30-minute consultation. <a href="#contact">Get in touch.</a></p>
+    <p class="pnote">All prices are starting points. Scope and complexity affect the final number.<br>The consultation is free and there's no obligation. <a href="#contact">Book yours →</a></p>
   </div>
 </div>
 
@@ -355,34 +483,46 @@
 <div id="skills" class="sec">
   <div class="w">
     <p class="lbl">Tech Stack</p>
-    <h2>What I work with</h2>
+    <h2>What I build with</h2>
     <div class="skg">
       <div class="skc">
         <h4>Trading Bot Development</h4>
         <ul>
-          <li>Telegram Bot API</li><li>Python automation</li>
-          <li>Rule-based checklists</li><li>Session alerts</li><li>Performance reports</li>
+          <li>Python automation</li>
+          <li>Telegram Bot API</li>
+          <li>Rule-based logic</li>
+          <li>Scheduled alerts</li>
+          <li>Performance reporting</li>
         </ul>
       </div>
       <div class="skc">
         <h4>Web App & Dashboard Building</h4>
         <ul>
-          <li>React frontends</li><li>Supabase (PostgreSQL)</li>
-          <li>Realtime data</li><li>REST APIs</li><li>Responsive design</li>
+          <li>React (frontend)</li>
+          <li>Supabase (database)</li>
+          <li>Realtime subscriptions</li>
+          <li>REST APIs</li>
+          <li>Responsive design</li>
         </ul>
       </div>
       <div class="skc">
-        <h4>Web3 & FinTech Integration</h4>
+        <h4>Web3 & FinTech</h4>
         <ul>
-          <li>ethers.js</li><li>BSC Smart Contracts</li>
-          <li>Token reward systems</li><li>DeFi frontends</li><li>Risk dashboards</li>
+          <li>ethers.js</li>
+          <li>BSC smart contracts</li>
+          <li>Token reward systems</li>
+          <li>DeFi frontends</li>
+          <li>Crypto wallet integration</li>
         </ul>
       </div>
       <div class="skc">
         <h4>Deployment & Delivery</h4>
         <ul>
-          <li>Vercel</li><li>GitHub Pages</li>
-          <li>Git version control</li><li>Figma prototyping</li><li>Notion documentation</li>
+          <li>Vercel</li>
+          <li>GitHub Pages</li>
+          <li>Git version control</li>
+          <li>Figma (prototyping)</li>
+          <li>Notion (documentation)</li>
         </ul>
       </div>
     </div>
@@ -393,12 +533,12 @@
 <div id="contact" class="sec">
   <div class="w">
     <p class="lbl">Contact</p>
-    <h2>Let's discuss your project</h2>
+    <h2>Let's talk about your project</h2>
     <div class="cg">
       <div class="ci">
-        <p>Open to freelance projects, part-time contracts, and full-time roles. Tell me what you need — I'll give you an honest answer with no pressure.</p>
+        <p>Whether you have a clear brief or just an idea, I'm happy to have a free 30-minute call to discuss it. No commitment, no pressure.</p>
         <div class="crows">
-          <div class="crow"><span class="clbl">Email</span><a href="mailto:gurutodd366@gmail.com">gurutodd366@gmail.com</a></div>
+          <div class="crow"><span class="clbl">Personal Email</span><a href="mailto:gurutodd366@gmail.com">gurutodd366@gmail.com</a></div>
           <div class="crow"><span class="clbl">BSTM Email</span><a href="mailto:bstm366@gmail.com">bstm366@gmail.com</a></div>
           <div class="crow"><span class="clbl">Phone / WhatsApp</span><a href="tel:+26774393675">+267 74393675</a></div>
           <div class="crow"><span class="clbl">BSTM Line</span><a href="tel:+26778355551">+267 78355551</a></div>
@@ -407,21 +547,21 @@
           <div class="crow"><span class="clbl">Location</span><span>Gaborone, Botswana</span></div>
         </div>
       </div>
-      <form id="contactForm">
+      <form id="cf">
         <input type="text" id="fn" placeholder="Your name" required>
         <input type="email" id="fe" placeholder="Your email" required>
         <select id="ft" required>
           <option value="" disabled selected>What do you need?</option>
           <option>Simple Website — from P2,500</option>
-          <option>Web Application / Dashboard — from P6,000</option>
+          <option>Web App / Dashboard — from P6,000</option>
           <option>Trading Bot / Automation — from P5,000</option>
-          <option>API Integration</option>
+          <option>API or System Integration</option>
           <option>Something else — let's talk</option>
         </select>
-        <textarea id="fm" placeholder="Briefly describe your project..." required></textarea>
+        <textarea id="fm" placeholder="Briefly describe your project or idea..." required></textarea>
         <button type="submit" class="btn bp" id="sb">Send Message</button>
         <div id="fs"></div>
-        <p class="fnote">I usually reply within 24 hours. No spam, ever.</p>
+        <p class="fnote">I reply within 24 hours. No spam, ever.</p>
       </form>
     </div>
   </div>
@@ -430,15 +570,22 @@
 <!-- FINAL CTA -->
 <div id="cta">
   <div class="w">
-    <h2>Ready to build something?</h2>
-    <p>Let's talk about your project. No commitment required.</p>
-    <a href="mailto:gurutodd366@gmail.com" class="btn bp">Send Me an Email</a>
+    <p class="lbl">Ready to start?</p>
+    <h2>Let's build something together.</h2>
+    <p>Free consultation. Clear quote. No pressure.</p>
+    <div class="brow" style="justify-content:center">
+      <a href="mailto:gurutodd366@gmail.com" class="btn bp">Send Me an Email</a>
+      <a href="https://t.me/bstm_signals" target="_blank" class="btn bg">Message on Telegram</a>
+    </div>
   </div>
 </div>
 
 <footer>
   <div class="fi">
-    <p>© 2026 Thobo Atlang Mosanako · Gaborone, Botswana · SIPA Registered</p>
+    <div>
+      <p>© 2026 Thobo Atlang Mosanako</p>
+      <p>CIPA Registered · Gaborone, Botswana</p>
+    </div>
     <ul>
       <li><a href="https://github.com/todd366" target="_blank">GitHub</a></li>
       <li><a href="https://github.com/bstm-systems" target="_blank">BSTM Systems</a></li>
@@ -450,45 +597,68 @@
 </footer>
 
 <script>
+  // Hamburger menu
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  document.querySelectorAll('.mob-link').forEach(l => {
+    l.addEventListener('click', () => {
+      ham.classList.remove('open');
+      mob.classList.remove('open');
+    });
+  });
+
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
       const t = document.querySelector(a.getAttribute('href'));
-      if (t) t.scrollIntoView({behavior:'smooth'});
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // Form — opens mailto pre-filled
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  // Active nav highlight
+  const secs = document.querySelectorAll('[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navAs.forEach(l => { l.style.color = l.getAttribute('href') === '#' + cur ? 'var(--t)' : ''; });
+  });
+
+  // Contact form
+  document.getElementById('cf').addEventListener('submit', function(e) {
     e.preventDefault();
-    const n = document.getElementById('fn').value;
-    const em = document.getElementById('fe').value;
+    const n = document.getElementById('fn').value.trim();
+    const em = document.getElementById('fe').value.trim();
     const ty = document.getElementById('ft').value;
-    const msg = document.getElementById('fm').value;
+    const msg = document.getElementById('fm').value.trim();
     const btn = document.getElementById('sb');
     const fs = document.getElementById('fs');
+
+    if (!n || !em || !ty || !msg) {
+      fs.className = 'err';
+      fs.textContent = 'Please fill in all fields before sending.';
+      return;
+    }
+
     const subj = encodeURIComponent('Project Enquiry: ' + ty);
     const body = encodeURIComponent('Name: ' + n + '\nEmail: ' + em + '\nService: ' + ty + '\n\nMessage:\n' + msg);
     btn.textContent = 'Opening email...';
     btn.disabled = true;
     window.location.href = 'mailto:gurutodd366@gmail.com?subject=' + subj + '&body=' + body;
+
     setTimeout(() => {
-      fs.textContent = '✓ Email app opened. I\'ll reply within 24 hours.';
+      fs.className = 'ok';
+      fs.textContent = '✓ Your email app should be open. I\'ll reply within 24 hours.';
       btn.textContent = 'Send Message';
       btn.disabled = false;
       this.reset();
-    }, 2500);
-  });
-
-  // Active nav
-  const secs = document.querySelectorAll('[id]');
-  const links = document.querySelectorAll('nav a[href^="#"]');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-    links.forEach(l => { l.style.color = l.getAttribute('href') === '#' + cur ? 'var(--t)' : ''; });
+    }, 2000);
   });
 </script>
 </body>
-        </html>
+  </html>
